@@ -1,5 +1,5 @@
 {
-  "name": "<%= app %>",
+  "name": "ng-fullstack",
   "version": "0.0.1",
   "main": "src/<%= app %>.js",
   "scripts": {
@@ -13,7 +13,8 @@
     "test-client": "gulp client.unit_test",
     "test-server": "mocha ./tests/server/**/*.js --recursive --check-leaks --reporter min --compilers js:babel-register",
     "coverage-server": "istanbul cover ./node_modules/mocha/bin/_mocha -- tests/**/*.js --compilers js:babel-register",
-    "coveralls-server": "istanbul cover ./node_modules/mocha/bin/_mocha -- tests/**/*.js --compilers js:babel-register --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "coveralls-server": "istanbul cover ./node_modules/mocha/bin/_mocha -- tests/**/*.js --compilers js:babel-register --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "test": "snyk test"
   },
   "dependencies": {
     "lodash": "^4.6.1",
@@ -47,8 +48,8 @@
     "karma-ng-html2js-preprocessor": "^0.1.2",
     "aliv": "~1.1.5",
     "del": "^1.1.1",
-  	"gulp": "^3.9.0",
-  	"babel-register": "^6.7.2",
+    "gulp": "^3.9.0",
+    "babel-register": "^6.7.2",
     "babel-regenerator-runtime": "^6.5.0",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-es2016": "^6.0.11",
@@ -82,18 +83,19 @@
     "chai": "^3.5.0",
     "coveralls": "^2.11.2",
     "istanbul": "^0.3.5",
-    "concurrently": "^2.0.0"
+    "concurrently": "^2.0.0",
+    "snyk": "^1.16.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://<%= repoHostUrl %>/<%= userNameSpace %>/<%= app %>.git"
+    "url": "https://github.com/Abdizriel/ng-fullstack-dependencies.git"
   },
-  "author": "<%= username %>",
+  "author": "Marcin Mrotek",
   "license": "MIT",
   "bugs": {
-    "url": "https://<%= repoHostUrl %>/<%= userNameSpace %>/<%= app %>/issues"
+    "url": "https://github.com/Abdizriel/ng-fullstack-dependencies/issues"
   },
-  "homepage": "https://<%= repoHostUrl %>/<%= userNameSpace %>/<%= app %>",
+  "homepage": "https://github.com/Abdizriel/ng-fullstack-dependencies",
   "engines": {
     "node": "stable"
   }
