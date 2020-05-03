@@ -14,7 +14,9 @@
     "test-server": "mocha ./tests/server/**/*.js --recursive --check-leaks --reporter min --compilers js:babel-register",
     "coverage-server": "istanbul cover ./node_modules/mocha/bin/_mocha -- tests/**/*.js --compilers js:babel-register",
     "coveralls-server": "istanbul cover ./node_modules/mocha/bin/_mocha -- tests/**/*.js --compilers js:babel-register --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-    "test": "snyk test"
+    "test": "snyk test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "lodash": "^4.6.1",
@@ -42,7 +44,8 @@
     "koa-bodyparser": "^2.2.0",
     "koa-router": "^5.4.0",
     "koa-static": "^2.0.0",
-    "newrelic": "^1.18.2"
+    "newrelic": "^1.18.2",
+    "snyk": "^1.316.2"
   },
   "devDependencies": {
     "karma-ng-html2js-preprocessor": "^1.0.2",
@@ -83,8 +86,7 @@
     "chai": "^3.5.0",
     "coveralls": "^2.11.2",
     "istanbul": "^0.4.4",
-    "concurrently": "^2.0.0",
-    "snyk": "^1.16.0"
+    "concurrently": "^2.0.0"
   },
   "repository": {
     "type": "git",
@@ -98,5 +100,6 @@
   "homepage": "https://github.com/Abdizriel/ng-fullstack-dependencies",
   "engines": {
     "node": "stable"
-  }
+  },
+  "snyk": true
 }
